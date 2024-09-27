@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.ktdsuniversity.edu.hello_spring.bbs.dao.BoardDao;
 import com.ktdsuniversity.edu.hello_spring.bbs.service.BoardService;
 import com.ktdsuniversity.edu.hello_spring.bbs.vo.BoardListVO;
+import com.ktdsuniversity.edu.hello_spring.bbs.vo.BoardSearchVO;
 import com.ktdsuniversity.edu.hello_spring.bbs.vo.BoardVO;
 import com.ktdsuniversity.edu.hello_spring.bbs.vo.WriteBoardVO;
 
@@ -43,5 +44,16 @@ public class BoardServiceImpl implements BoardService{
 		
 		// 생성된 개수가 0보다 클 때 return (true) 아니면 false return
 		return createCount > 0;
+	}
+	
+	@Override
+	public BoardVO getOneBoard(BoardSearchVO boardSearchVO) {
+		BoardVO boardVO = new BoardVO();
+		
+		boardVO = this.boardDao.getOnBoard(boardSearchVO);
+		
+		// 게시글 조회수도 1 증가해야 한다.
+		int count = this.boardDao.increaseViewCount(boardSearchVO);
+		return boardVO;
 	}
 }

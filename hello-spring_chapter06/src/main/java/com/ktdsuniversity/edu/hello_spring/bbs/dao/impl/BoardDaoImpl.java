@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.ktdsuniversity.edu.hello_spring.bbs.dao.BoardDao;
+import com.ktdsuniversity.edu.hello_spring.bbs.vo.BoardSearchVO;
 import com.ktdsuniversity.edu.hello_spring.bbs.vo.BoardVO;
 import com.ktdsuniversity.edu.hello_spring.bbs.vo.WriteBoardVO;
 
@@ -38,5 +39,19 @@ public class BoardDaoImpl extends SqlSessionDaoSupport implements BoardDao {
 	public int insertNewBoard(WriteBoardVO writeBoardVO) {
 		return this.getSqlSession().insert("com.ktdsuniversity.edu.hello_spring.bbs.dao.BoardDao.insertNewBoard",
 				writeBoardVO);
+	}
+
+	@Override
+	public int increaseViewCount(BoardSearchVO boardSearchVO) {
+
+		return this.getSqlSession().update("com.ktdsuniversity.edu.hello_spring.bbs.dao.BoardDao.increaseViewCount",
+				boardSearchVO);
+	}
+
+	@Override
+	public BoardVO getOnBoard(BoardSearchVO boardSearchVO) {
+
+		return this.getSqlSession().selectOne("com.ktdsuniversity.edu.hello_spring.bbs.dao.BoardDao.getOnBoard",
+				boardSearchVO);
 	}
 }
