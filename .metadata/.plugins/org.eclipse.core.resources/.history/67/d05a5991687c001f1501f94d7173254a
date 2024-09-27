@@ -1,0 +1,42 @@
+package com.ktdsuniversity.edu.hello_spring.bbs.service.impl;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.context.annotation.Import;
+
+import com.ktdsuniversity.edu.hello_spring.bbs.dao.BoardDao;
+import com.ktdsuniversity.edu.hello_spring.bbs.dao.impl.BoardDaoImpl;
+import com.ktdsuniversity.edu.hello_spring.bbs.service.BoardService;
+
+// Spring Application의 Bean을 생성해주는 Annotation
+@SpringBootTest
+
+// Test하고자 하는 클래스와 Test에 필요한 클래스들을 import한다.
+// BoardServiceImpl와 BoardDaoImpl을 테스트를 한다고 명시하는거임.
+// BoardServiceImpl.class: BoardServiceImpl를 테스트 하기 위해 임포트한다.
+// BoardDaoImpl.class: BoardServiceImpl에 BoardDaoImpl을 Autowired하기 위해 임포트한다.
+@Import( { BoardServiceImpl.class, BoardDaoImpl.class} )
+public class BoardServiceImplTest {
+	
+	@Autowired
+	private BoardService boardService;
+	
+
+	// 왜 Autowired를 사용안하고 MockBean을 쓰는지? -> 모르겠음.
+	// MockBean: 가짜 인스턴스를 생성해주는 어노테이션
+	/**
+	 * JUnit5 테스트를 위해 BoardServiceImpl에 가짜 인스턴스를 DI시킨다.
+	 */
+	@MockBean
+	private BoardDao boardDao;
+	
+	@Test
+	public void testGetAllBoard() {
+		
+		// 1. boardDao.selectBoardAllCount()가 반환시킬 값을 명시한다.
+		
+		// 2. boardDao.selectAllBoard()가 반환시킬 값을 명시한다.
+	}
+}

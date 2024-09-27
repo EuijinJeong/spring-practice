@@ -1,0 +1,15 @@
+package com.ktdsuniversity.edu.hello_spring.bbs.service.impl;
+
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.Import;
+
+// Spring Application의 Bean을 생성해주는 Annotation
+@SpringBootTest
+// Test하고자 하는 클래스와 Test에 필요한 클래스들을 import한다.
+// BoardServiceImpl와 BoardDaoImpl을 테스트를 한다고 명시하는거임.
+// BoardServiceImpl.class: BoardServiceImpl를 테스트 하기 위해 임포트한다.
+// BoardDaoImpl.class: BoardServiceImpl에 BoardDaoImpl을 Autowired하기 위해 임포트한다.
+@Import( { BoardServiceImpl.class, BoardDaoImpl.class} )
+public class BoardServiceImplTest {
+	
+}

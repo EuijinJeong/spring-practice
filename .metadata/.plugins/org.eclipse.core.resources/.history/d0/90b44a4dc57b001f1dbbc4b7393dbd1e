@@ -1,0 +1,5 @@
+package com.ktdsuniversity.edu.hello_spring.service;
+
+public class HelloBootService {
+
+}
