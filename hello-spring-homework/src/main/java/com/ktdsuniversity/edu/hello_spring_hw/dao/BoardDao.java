@@ -25,4 +25,20 @@ public interface BoardDao {
 	 * 			 등록된 게시글의 개수를 반환한다.
 	 */
 	public int createNewBoard(WriteNewBoardVo writeNewBoardVo);
+	
+	/**
+	 * 파라미터로 전달받은 게시글 ID의 조회수를 1 증가 시킨다.
+	 * 
+	 * @param id: 게시글 ID (번호)
+	 * @return: DB에 Update한 개수
+	 */
+	public int increaseViewCount(int id);
+	
+	/**
+	 * 파라미터로 전달받은 게시글 ID의 게시글 정보를 조회한다.
+	 * 
+	 * @param id
+	 * @return
+	 */
+	public BoardVo getOneBoard(int id);
 }

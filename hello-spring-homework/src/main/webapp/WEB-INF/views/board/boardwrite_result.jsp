@@ -4,15 +4,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="/css/boardwrite_result.css" />
-<title>게시글 등록 결과 페이지</title>
+<title>게시글 등록 결과</title>
 </head>
 <body>
-	<h1>게시글 등록 결과</h1>
-	<div class="message">
-		<c:out value="${message}" />
-	</div>
-
-<a href="/board/list" class="button">게시글 목록으로 돌아가기</a>
+    <h1>게시글 등록 결과</h1>
+    <div>
+        <p>제목: ${board.subject}</p>
+        <p>아이디: ${board.email}</p>
+        <p>내용: ${board.content}</p>
+    </div>
+    <a href="/board/list">게시글 목록으로 돌아가기</a>
 </body>
 </html>
