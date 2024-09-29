@@ -32,6 +32,6 @@
     <fullyQualifiedTypeName name="com.ktdsuniversity.edu.hello_spring.bbs.vo.WriteBoardVO"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ModelAttribute"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
-    <fullyQualifiedTypeName name="com.ktdsuniversity.edu.hello_spring.bbs.vo.BoardVO"/>
     <fullyQualifiedTypeName name="com.ktdsuniversity.edu.hello_spring.bbs.vo.BoardSearchVO"/>
+    <fullyQualifiedTypeName name="com.ktdsuniversity.edu.hello_spring.bbs.vo.BoardVO"/>
 </qualifiedTypeNameHistroy>
