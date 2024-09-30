@@ -46,4 +46,11 @@ public class BoardServiceImpl implements BoardService{
 		return createCount > 0;
 	}
 	
+	@Override
+	public void increaseViewCount(BoardVo boardVo) {
+		
+		
+	}
+	
+	
 }
