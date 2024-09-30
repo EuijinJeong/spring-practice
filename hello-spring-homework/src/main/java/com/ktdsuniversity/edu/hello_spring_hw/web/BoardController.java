@@ -2,11 +2,13 @@ package com.ktdsuniversity.edu.hello_spring_hw.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.ktdsuniversity.edu.hello_spring_hw.bbs.vo.BoardListVo;
 import com.ktdsuniversity.edu.hello_spring_hw.service.BoardService;
 import com.ktdsuniversity.edu.hello_spring_hw.vo.BoardListVo;
 import com.ktdsuniversity.edu.hello_spring_hw.vo.BoardVo;
@@ -23,19 +25,18 @@ public class BoardController {
 	 * 
 	 * @return: 게시글 목록 화면
 	 */
-	@GetMapping("/board/list")
-	public ModelAndView viewBoardList() {
+	@GetMapping("/board/list") // http://localhost:8080/board/list로 연결
+	public String viewBoardList(Model model) {
+		BoardListVo boardListVO = this.boardService.getAllBoard();
 		
-		BoardListVo boardListVo = new BoardListVo();
-		
-		boardListVo = boardService.getAllBoard();
-		
-		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.setViewName("board/board_mainpage");
-		modelAndView.addObject("boardList", boardListVo);
-		
-		
-		return modelAndView;
+		model.addAttribute("boardListVO", boardListVO);
+	
+		return "board/boardlist";
+	}
+	
+	@GetMapping("/board/write")
+	public String writeNewBoard() {
+		return "board/boardwrite";
 	}
 	
 	/**
@@ -45,7 +46,7 @@ public class BoardController {
 	 */
 	@GetMapping("/board/write")
 	public String viewBoardWritePage() {
-		return "/board/boardwrite";
+		return "board/boardwrite";
 	}
 	
 	/**
@@ -55,10 +56,10 @@ public class BoardController {
 	 * @return: 게시글 등록 완료 화면.
 	 */
 	@PostMapping("/board/write")
-	public ModelAndView doBoardWrite(@ModelAttribute WriteNewBoardVo writeNewBoardVo) {
+	public Model doBoardWrite(@ModelAttribute WriteNewBoardVo writeNewBoardVo) {
 		
 		// 객체 생성
-		ModelAndView modelAndView = new ModelAndView();
+		Model model = new Mo
 		
 		// 확인을 위해 콘솔에 출력
 		System.out.println("제목: " + writeNewBoardVo.getSubject());

@@ -10,7 +10,4 @@
   	<!-- 자바에서 입력한 Null이 진짜 null이라고 명시해주는 셋팅이다. -->
   	<setting name="jdbcTypeForNull" value="NULL"></setting>
   </settings>
-  <mappers>
-    <mapper resource="org/mybatis/example/BlogMapper.xml"/>
-  </mappers>
 </configuration>
