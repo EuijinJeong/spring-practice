@@ -51,12 +51,17 @@ public class BoardDaoImpl extends SqlSessionDaoSupport implements BoardDao {
 	@Override
 	public BoardVO getOneBoard(int id) {
 
-		return this.getSqlSession().selectOne("com.ktdsuniversity.edu.hello_spring.bbs.dao.BoardDao.getOneBoard",
-				id);
+		return this.getSqlSession().selectOne("com.ktdsuniversity.edu.hello_spring.bbs.dao.BoardDao.getOneBoard", id);
 	}
-	
+
 	@Override
 	public int updateOneBoard(ModifyBoardVO modifyBoardVO) {
 		return getSqlSession().update("updateOneBoard", modifyBoardVO);
+	}
+
+	@Override
+	public int deleteOneBoard(int id) {
+
+		return this.getSqlSession().delete("com.ktdsuniversity.edu.hello_spring.bbs.dao.BoardDao.deleteOneBoard", id);
 	}
 }

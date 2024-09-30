@@ -51,4 +51,10 @@ public interface BoardDao {
 	 */
 	public int updateOneBoard(ModifyBoardVO modifyBoardVO);
 	
+	/**
+	 * 
+	 * @param id
+	 * @return
+	 */
+	public int deleteOneBoard(int id);
 }

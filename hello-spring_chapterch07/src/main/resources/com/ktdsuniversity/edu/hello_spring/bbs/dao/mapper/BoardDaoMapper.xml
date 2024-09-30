@@ -69,10 +69,15 @@
 	
 	<update id="updateOneBoard" parameterType="com.ktdsuniversity.edu.hello_spring.bbs.vo.ModifyBoardVO">
 		UPDATE BOARD
-   		   SET SUBJECT = $#{_subject}
-     		 , CONTENT = $#{_content}
-     		 , EMAIL = $#{_email}
+   		   SET SUBJECT = #{subject}
+     		 , CONTENT = #{content}
+     		 , EMAIL = #{email}
      		 , MDFY_DT = SYSDATE
- 		 WHERE ID = $#{_id}
+ 		 WHERE ID = #{id}
 	</update>
+	
+	<delete id="deleteOneBoard" parameterType="_int">
+		DELETE FROM BOARD 
+ 		 WHERE ID = #{_id}
+	</delete>
 </mapper>

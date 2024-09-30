@@ -78,4 +78,12 @@ public class BoardServiceImpl implements BoardService{
 		
 		return updateCount > 0;
 	}
+	
+	@Override
+	public boolean deleteOneBoard(int id) {
+		
+		int deleteCount = boardDao.deleteOneBoard(id);
+		
+		return deleteCount > 0;
+	}
 }

@@ -4371,3 +4371,145 @@ java.lang.IllegalStateException
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-09-30 16:13:56.979
+!MESSAGE Classpath changed for project: hello-spring_chapterch07
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-09-30 16:13:57.215
+!MESSAGE Classpath changed for project: hello-spring_chapterch07
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-09-30 16:13:58.041
+!MESSAGE Classpath changed for project: hello-spring_chapterch07
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-09-30 16:14:41.090
+!MESSAGE Classpath changed for project: hello-spring_chapterch07
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-09-30 16:14:41.171
+!MESSAGE Classpath changed for project: hello-spring_chapterch07
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-09-30 16:14:42.114
+!MESSAGE Classpath changed for project: hello-spring_chapterch07
+
+!ENTRY org.eclipse.core.resources 2 10035 2024-09-30 16:15:23.195
+!MESSAGE The workspace will exit with unsaved changes in this session.
+!SESSION 2024-09-30 16:15:26.582 -----------------------------------------------
+eclipse.buildId=4.25.0.202409101855
+java.version=21.0.4
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=macosx, ARCH=aarch64, WS=cocoa, NL=ko_KR
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4 -keyring /Users/jeong-uijin/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch aarch64 -product org.springframework.boot.ide.branding.sts4 -keyring /Users/jeong-uijin/.eclipse_keyring
+
+!ENTRY ch.qos.logback.classic 1 0 2024-09-30 16:15:28.013
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY org.eclipse.core.resources 2 10035 2024-09-30 16:15:30.338
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY ch.qos.logback.classic 1 0 2024-09-30 16:15:30.498
+!MESSAGE Logback config file: /Users/jeong-uijin/Documents/Workspace/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.6.1.20240411-1122.xml
+
+!ENTRY org.eclipse.ui 2 0 2024-09-30 16:15:30.677
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2024-09-30 16:15:30.677
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.ui 2 0 2024-09-30 16:15:30.819
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2024-09-30 16:15:30.819
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-09-30 16:15:33.126
+!MESSAGE Command list starting LS: org.springframework.tooling.boot.ls
+START:
+/Applications/SpringToolSuite4.app/Contents/Eclipse/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.macosx.aarch64_21.0.4.v20240802-1551/jre/bin/java
+-Dsts.lsp.client=eclipse
+-Xmx1024m
+-XX:TieredStopAtLevel=1
+-Xlog:jni+resolve=off
+-XX:ErrorFile=/Users/jeong-uijin/Documents/Workspace/.metadata/.plugins/org.springframework.tooling.boot.ls/fatal-error-spring-boot_1727680533125
+-Dlanguageserver.hover-timeout=225
+-jar
+/Applications/SpringToolSuite4.app/Contents/Eclipse/plugins/org.springframework.tooling.boot.ls_1.57.0.202409101848/servers/spring-boot-language-server/spring-boot-language-server-1.57.0-SNAPSHOT-exec.jar
+END
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-09-30 16:15:33.126
+!MESSAGE DelegatingStreamConnectionProvider - Starting Boot LS
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-09-30 16:15:33.129
+!MESSAGE Started org.springframework.tooling.boot.ls LS process 97265
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2024-09-30 16:15:33.135
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/application-client_9.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2024-09-30 16:15:33.135
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/jobXML_2_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2024-09-30 16:15:33.136
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/beans_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2024-09-30 16:15:33.136
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jaxb/bindingschema_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2024-09-30 16:15:33.139
+!MESSAGE The given URI https://jakarta.ee/xml/ns/validation/validation-configuration-3.0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2024-09-30 16:15:33.140
+!MESSAGE The given URI http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_1.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-09-30 16:15:34.516
+!MESSAGE Boot project ADDED: hello-spring
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-09-30 16:15:34.516
+!MESSAGE Starting Boot LS...
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-09-30 16:15:34.517
+!MESSAGE Started Boot LS process
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-09-30 16:15:34.517
+!MESSAGE Boot project ADDED: hello-spring-homework-edit
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-09-30 16:15:34.518
+!MESSAGE Boot project ADDED: hello-spring_chapter03
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-09-30 16:15:34.518
+!MESSAGE Boot project ADDED: hello-spring_chapter04
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-09-30 16:15:34.518
+!MESSAGE Boot project ADDED: hello-spring_chapter04_test
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-09-30 16:15:34.518
+!MESSAGE Boot project ADDED: hello-spring_chapter05
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-09-30 16:15:34.518
+!MESSAGE Boot project ADDED: hello-spring_chapter05_test
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-09-30 16:15:34.519
+!MESSAGE Boot project ADDED: hello-spring_chapter06
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-09-30 16:15:34.519
+!MESSAGE Boot project ADDED: hello-spring_chapterch07
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-09-30 16:15:34.944
+!MESSAGE Classpath changed for project: hello-spring_chapter06
+
+!ENTRY org.eclipse.jface 2 0 2024-09-30 16:15:35.269
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2024-09-30 16:15:35.269
+!MESSAGE A conflict occurred for COMMAND+SHIFT+T:
+Binding(COMMAND+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.navigate.open.type"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(COMMAND+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.lsp4e.symbolinworkspace"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)

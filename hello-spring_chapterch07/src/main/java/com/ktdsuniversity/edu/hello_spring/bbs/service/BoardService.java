@@ -39,4 +39,11 @@ public interface BoardService {
 	 * @return
 	 */
 	public boolean updateOneBoard(ModifyBoardVO modifyBoardVO);
+	
+	/**
+	 * 
+	 * @param id
+	 * @return
+	 */
+	public boolean deleteOneBoard(int id);
 }
