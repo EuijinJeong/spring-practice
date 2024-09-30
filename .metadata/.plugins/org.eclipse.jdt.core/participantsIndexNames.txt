@@ -9,6 +9,8 @@ INDEX VERSION 1.134
 /hello-spring_chapter03/src/main/java
 /Users/jeong-uijin/Documents/Workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3733787791.index
 /hello-spring_chapter04_test/src/main/java
+/Users/jeong-uijin/Documents/Workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1655009113.index
+/hello-spring_chapterch07/src/main/java
 /Users/jeong-uijin/Documents/Workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/682570539.index
 /hello-spring_chapter05/src/main/java
 /Users/jeong-uijin/Documents/Workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/730979538.index
