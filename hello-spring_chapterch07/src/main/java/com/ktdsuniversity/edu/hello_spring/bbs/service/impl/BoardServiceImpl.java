@@ -9,6 +9,7 @@ import com.ktdsuniversity.edu.hello_spring.bbs.dao.BoardDao;
 import com.ktdsuniversity.edu.hello_spring.bbs.service.BoardService;
 import com.ktdsuniversity.edu.hello_spring.bbs.vo.BoardListVO;
 import com.ktdsuniversity.edu.hello_spring.bbs.vo.BoardVO;
+import com.ktdsuniversity.edu.hello_spring.bbs.vo.ModifyBoardVO;
 import com.ktdsuniversity.edu.hello_spring.bbs.vo.WriteBoardVO;
 
 @Service
@@ -46,23 +47,35 @@ public class BoardServiceImpl implements BoardService{
 	}
 	
 	@Override
-	public BoardVO getOneBoard(int id) {
-		// 파라미터로 전달 받은 게시글의 조회수를 1 증가해야한다.
-		// updateCount는 DB에 업데이트한 게시글의 수를 반환한다.
-		
-		int updateCount = boardDao.increaseViewCount(id);
-		
-		if(updateCount == 0) {
-			// updateCount가 0이라는 건
-			// 파라미터로 전달받은 id 값이 존재하지 않다라는 의미이다.
-			// 이러한 경우, 사용자에게 잘못된 접근입니다 라는 예외를 보내줘야 한다.
-			throw new IllegalArgumentException("잘못된 접근입니다.");
-		}
-		
-		// 예외가 발생하지 않았다면, 게시글의 정보를 조회한다.
+	public BoardVO getOneBoard(int id, boolean isIncrease) {
 		BoardVO boardVO = new BoardVO();
-		boardVO = boardDao.getOneBoard(id);
-		
+	
+		if(isIncrease) {
+			// 파라미터로 받은 아이디에 해당하는 게시글의 조회수가 1 증가한다.
+			int updateCount = boardDao.increaseViewCount(id);
+			
+			if(updateCount == 0) {
+				// updateCount가 0이라는 건
+				// 파라미터로 전달받은 id 값이 존재하지 않다라는 의미이다.
+				// 이러한 경우, 사용자에게 잘못된 접근입니다 라는 예외를 보내줘야 한다.
+				throw new IllegalArgumentException("잘못된 접근입니다.");
+			} else {
+				// 예외가 발생하지 않았다면, 게시글의 정보를 조회한다.
+				
+				boardVO = boardDao.getOneBoard(id);
+				
+				if(boardVO == null) {
+					throw new IllegalArgumentException("잘못된 접근입니다.");
+				}
+			}
+		}
 		return boardVO;
+	}
+	
+	@Override
+	public boolean updateOneBoard(ModifyBoardVO modifyBoardVO) {
+		int updateCount = boardDao.updateOneBoard(modifyBoardVO);
+		
+		return updateCount > 0;
 	}
 }

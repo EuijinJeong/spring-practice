@@ -66,4 +66,13 @@
   		 FROM BOARD
   		WHERE ID = #{_id}
 	</select>
+	
+	<update id="updateOneBoard" parameterType="com.ktdsuniversity.edu.hello_spring.bbs.vo.ModifyBoardVO">
+		UPDATE BOARD
+   		   SET SUBJECT = $#{_subject}
+     		 , CONTENT = $#{_content}
+     		 , EMAIL = $#{_email}
+     		 , MDFY_DT = SYSDATE
+ 		 WHERE ID = $#{_id}
+	</update>
 </mapper>

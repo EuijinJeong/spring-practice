@@ -3,6 +3,7 @@ package com.ktdsuniversity.edu.hello_spring.bbs.dao;
 import java.util.List;
 
 import com.ktdsuniversity.edu.hello_spring.bbs.vo.BoardVO;
+import com.ktdsuniversity.edu.hello_spring.bbs.vo.ModifyBoardVO;
 import com.ktdsuniversity.edu.hello_spring.bbs.vo.WriteBoardVO;
 
 public interface BoardDao {
@@ -42,5 +43,12 @@ public interface BoardDao {
 	 * @return
 	 */
 	public BoardVO getOneBoard(int id);
+	
+	/**
+	 * 
+	 * @param modifyBoardVO
+	 * @return
+	 */
+	public int updateOneBoard(ModifyBoardVO modifyBoardVO);
 	
 }

@@ -2,6 +2,7 @@ package com.ktdsuniversity.edu.hello_spring.bbs.service;
 
 import com.ktdsuniversity.edu.hello_spring.bbs.vo.BoardListVO;
 import com.ktdsuniversity.edu.hello_spring.bbs.vo.BoardVO;
+import com.ktdsuniversity.edu.hello_spring.bbs.vo.ModifyBoardVO;
 import com.ktdsuniversity.edu.hello_spring.bbs.vo.WriteBoardVO;
 
 /**
@@ -26,8 +27,16 @@ public interface BoardService {
 	 * 파라미터로 전달받은 값으로 게시글을 조회한다.
 	 * 게시글 조회시 조회수도 1 증가한다.
 	 * 
-	 * @param boardSearchVO: 조회할 게시글의 ID 정보.
+	 * @param id: 조회할 게시글의 ID
+	 * @param isIncrease : 게시글 증가 여부.
 	 * @return: 게시글 정보.
 	 */
-	public BoardVO getOneBoard(int id);
+	public BoardVO getOneBoard(int id, boolean isIncrease);
+	
+	/**
+	 * 
+	 * @param modifyBoardVO
+	 * @return
+	 */
+	public boolean updateOneBoard(ModifyBoardVO modifyBoardVO);
 }

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.ktdsuniversity.edu.hello_spring.bbs.dao.BoardDao;
 import com.ktdsuniversity.edu.hello_spring.bbs.vo.BoardVO;
+import com.ktdsuniversity.edu.hello_spring.bbs.vo.ModifyBoardVO;
 import com.ktdsuniversity.edu.hello_spring.bbs.vo.WriteBoardVO;
 
 @Repository
@@ -52,5 +53,10 @@ public class BoardDaoImpl extends SqlSessionDaoSupport implements BoardDao {
 
 		return this.getSqlSession().selectOne("com.ktdsuniversity.edu.hello_spring.bbs.dao.BoardDao.getOneBoard",
 				id);
+	}
+	
+	@Override
+	public int updateOneBoard(ModifyBoardVO modifyBoardVO) {
+		return getSqlSession().update("updateOneBoard", modifyBoardVO);
 	}
 }

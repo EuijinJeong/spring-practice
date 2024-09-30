@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -59,13 +60,25 @@ public class BoardController {
 	@GetMapping("/board/view") // http://localhost:8080/board/view?id=1
 	public String viewOneBoard(@RequestParam int id, Model model) {
 		
-		BoardVO boardVO = boardService.getOneBoard(id);
+		BoardVO boardVO = boardService.getOneBoard(id, true);
 		
 		// Model 객체에 boardVO 데이터를 추가한다.
 		model.addAttribute("boardVO", boardVO);
 		
 		// 파일의 경로이다.
 		return "board/boardview";
+	}
+	
+	@GetMapping("/board/modify/{id}") // http://localhost:8080/board/modify/1
+	public String viewBoardModifyPage(@PathVariable int id, Model model) {
+		
+		BoardVO boardVO = new BoardVO();
+		boardVO = boardService.getOneBoard(id, false);
+		
+		model.addAttribute("boardVO", boardVO);
+		
+		// 파일의 경로를 전달한다.
+		return "board/boardmodify";
 	}
 	
 }
