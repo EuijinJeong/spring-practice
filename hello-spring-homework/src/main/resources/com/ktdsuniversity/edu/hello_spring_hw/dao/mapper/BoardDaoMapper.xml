@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <!-- 이거 경로 패키지랑 동일하게 해야함 아니면 큰일남. -->
+<mapper namespace="com.ktdsuniversity.edu.hello_spring_hw.dao.BoardDao">
+
+  <!-- 쿼리문을 여기에다가 작성해야함! -->
+  
+  <!-- 등록된 게시글의 개수를 조회하는 쿼리문 -->
+  <select id="searchBoardCount" resultType="_int">
+  	SELECT COUNT(1)
+  	  FROM BOARD
+  </select>
+  
+  <!-- 등록된 모든 게시글의 정보를 조회하는 쿼리문 -->
+  <select id="searchAllBoard" resultType="com.ktdsuniversity.edu.hello_spring_hw.vo.BoardVo">
+  	SELECT ID 
+	 	 , SUBJECT
+	 	 , CONTENT 
+	 	 , EMAIL 
+	 	 , VIEW_CNT 
+	 	 , TO_CHAR(CRT_DT, 'YYYY-MM-DD') CRT_DT
+	 	 , TO_CHAR(MDFY_DT, 'YYYY-MM-DD') MDFY_DT
+	 	 , FILE_NAME 
+	 	 , ORIGIN_FILE_NAME 
+  	 FROM BOARD 
+    ORDER BY CRT_DT DESC
+  </select>
+  
+  <insert id="createNewBoard" parameterType="com.ktdsuniversity.edu.hello_spring_hw.vo.WriteNewBoardVo">
+  	INSERT INTO BOARD
+	(ID
+	, SUBJECT
+	, CONTENT
+	, EMAIL
+	, VIEW_CNT
+	, CRT_DT
+	, MDFY_DT
+	, FILE_NAME
+	, ORIGIN_FILE_NAME)
+	VALUES
+	(SEQ_BOARD_PK.NEXTVAL
+	, #{subject}
+	, #{content}
+	, #{email}
+	, 0
+	, SYSDATE
+	, SYSDATE
+	, NULL
+	, NULL)
+  </insert>
+</mapper>

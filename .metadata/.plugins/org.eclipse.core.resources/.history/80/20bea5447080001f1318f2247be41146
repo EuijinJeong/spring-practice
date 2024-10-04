@@ -1,0 +1,18 @@
+package com.ktdsuniversity.edu.hello_spring.dao.impl;
+
+import org.mybatis.spring.support.SqlSessionDaoSupport;
+
+import com.ktdsuniversity.edu.hello_spring.dao.ToDoListDao;
+import com.ktdsuniversity.edu.hello_spring.vo.ToDoListWriteVO;
+
+/**
+ * 
+ */
+public class ToDoListDaoImpl extends SqlSessionDaoSupport implements ToDoListDao{
+
+	@Override
+	public boolean insertNewToDoList(ToDoListWriteVO toDoListWriteVO) {
+		
+		return false;
+	}
+}

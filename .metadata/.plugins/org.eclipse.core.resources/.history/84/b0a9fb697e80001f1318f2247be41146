@@ -1,0 +1,10 @@
+package com.ktdsuniversity.edu.hello_spring.member.vo;
+
+public class WriteNewMemberVO {
+	
+	private String email;
+	
+	private String name;
+	
+	private String password;
+}

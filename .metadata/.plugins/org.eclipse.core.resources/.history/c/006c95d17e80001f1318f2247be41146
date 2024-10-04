@@ -1,0 +1,49 @@
+package com.ktdsuniversity.edu.hello_spring.member.vo;
+
+/**
+ * 
+ */
+public class WriteNewMemberVO {
+	
+	private String email;
+	
+	private String name;
+	
+	private String password;
+	
+	public String getEmail() {
+		return email;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public String getPassword() {
+		return password;
+	}
+	
+	public void setEmail(String email) {
+		this.email = email;
+		
+		if(this.email !=null) {
+			this.email = this.email.trim();
+		}
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+		
+		if(this.name != null) {
+			this.name = this.name.trim();
+		}
+	}
+	
+	public void setPassword(String password) {
+		this.password = password;
+		
+		if(this.password !=null) {
+			this.password = this.password.trim();
+		}
+	}
+}

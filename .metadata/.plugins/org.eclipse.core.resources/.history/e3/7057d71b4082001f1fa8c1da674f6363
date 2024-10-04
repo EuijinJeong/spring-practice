@@ -1,0 +1,15 @@
+package com.ktdsuniversity.edu.hello_spring.service;
+
+import com.ktdsuniversity.edu.hello_spring.vo.ToDoListVO;
+import com.ktdsuniversity.edu.hello_spring.vo.ToDoListWriteVO;
+
+public interface ToDoListService {
+
+	public boolean insertNewToDoList(ToDoListWriteVO toDoListWriteVO);
+	
+	public void selectOneToDoList();
+	
+	public ToDoListVO selectAllToDoList();
+	
+	public boolean updateIsFinished(int id);
+}

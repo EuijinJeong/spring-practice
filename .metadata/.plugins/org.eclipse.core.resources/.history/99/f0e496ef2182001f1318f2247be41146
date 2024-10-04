@@ -1,0 +1,44 @@
+package com.ktdsuniversity.edu.hello_spring.web;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.ktdsuniversity.edu.hello_spring.service.ToDoListService;
+import com.ktdsuniversity.edu.hello_spring.vo.ToDoListWriteVO;
+
+@Controller
+public class ToDoListController {
+	
+	@Autowired 
+	private ToDoListService toDoListService;
+	
+	/**
+	 * 
+	 * @return
+	 */
+	@GetMapping("/todolist/writelist")
+	public String renderToDoListForm() {
+		return "/todolist/todowritelist";
+	}
+	
+	/**
+	 * 사용자가 입력한 값을 서버에 전송하기 위한 컨트롤러.
+	 * 
+	 * @param toDoListWriteVO: 사용자가 입력한 값을 담은 VO 객체.
+	 * @param model: 사용자가 필수 입력칸을 입력하지 않았을 때 원래 입력했던 값을 다시 보여주기 위해 보여줘야 한다.
+	 */
+	@PostMapping("/todolist/writelist")
+	public void writeToDoList(ToDoListWriteVO toDoListWriteVO, Model model) {
+		// 1. 클라이언트에서 넘어온 요청을 받는다.
+		
+		// 2. 서비스에게 요청을 전송한다.
+		// 3. 요청 결과값을 받는다.
+		boolean isCreated = toDoListService.insertNewToDoList(toDoListWriteVO);
+		
+		
+		// 4. 결과를 클라이언트에게 돌려준다.
+	}
+}
