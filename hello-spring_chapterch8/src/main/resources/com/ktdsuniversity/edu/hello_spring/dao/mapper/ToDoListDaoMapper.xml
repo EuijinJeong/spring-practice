@@ -14,4 +14,38 @@
 		, #{subject}
 		, #{deadLine})
 	</insert>
+	
+	<select id="selectOneToDoList" resultType="com.ktdsuniversity.edu.hello_spring.vo.ToDoVO">
+		 SELECT ID
+ 	  		  , ISFIN AS isFinished
+ 	  		  , SBJCT AS subject
+ 	  		  , DEADLN AS deadLine
+   		   FROM TODOLIST 
+  		  WHERE ID = #{id}
+	</select>
+	
+	<select id="selectAllToDoList" resultType="com.ktdsuniversity.edu.hello_spring.vo.ToDoVO">
+		SELECT ID
+	 		 , ISFIN AS isFinished
+	 		 , SBJCT AS subject
+	 		 , DEADLN AS deadLine
+ 		  FROM TODOLIST
+	</select>
+	
+	<select id="selectCountToDoList" resultType="_int">
+		SELECT count(1)
+  		  FROM TODOLIST
+	</select>
+	
+	<update id="updateIsFinished" parameterType="_int">
+		 UPDATE TODOLIST 
+	 	 SET ISFIN = 1
+  		 WHERE ID = #{id}
+	</update>
+	
+	<delete id="deleteToDoList" parameterType="_int">
+		DELETE FROM TODOLIST
+ 		 WHERE ID = #{id}
+	</delete>
+	
 </mapper>

@@ -4,10 +4,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.ktdsuniversity.edu.hello_spring.service.ToDoListService;
+import com.ktdsuniversity.edu.hello_spring.vo.ToDoListVO;
 import com.ktdsuniversity.edu.hello_spring.vo.ToDoListWriteVO;
+import com.ktdsuniversity.edu.hello_spring.vo.ToDoVO;
+
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @Controller
 public class ToDoListController {
@@ -15,22 +21,11 @@ public class ToDoListController {
 	@Autowired 
 	private ToDoListService toDoListService;
 	
-	/**
-	 * 
-	 * @return
-	 */
 	@GetMapping("/todolist/writelist")
 	public String renderToDoListForm() {
 		return "todolist/todowritelist";
 	}
 
-	
-	/**
-	 * 사용자가 입력한 값을 서버에 전송하기 위한 컨트롤러.
-	 * 
-	 * @param toDoListWriteVO: 사용자가 입력한 값을 담은 VO 객체.
-	 * @param model: 사용자가 필수 입력칸을 입력하지 않았을 때 원래 입력했던 값을 다시 보여주기 위해 보여줘야 한다.
-	 */
 	@PostMapping("/todolist/writelist")
 	public String writeToDoList(ToDoListWriteVO toDoListWriteVO, Model model) {
 		
@@ -58,4 +53,61 @@ public class ToDoListController {
 		}
 		
 	}
+	
+	// todolist보기 관련 컨트롤러.
+	@GetMapping("/todolist/list")
+	public String getAllToDoList(Model model) {
+		
+		ToDoListVO toDoListVO = new ToDoListVO();
+		toDoListVO = toDoListService.selectAllToDoList();
+		
+		if(toDoListVO == null) {
+			throw new IllegalArgumentException("알 수 없는 시스템 오류로 TODO LIST 목록을 가져오는데 실패했습니다.");
+		}
+		
+		System.out.println("Retrieved ToDo List: " + toDoListVO.getToDoList());
+		
+		model.addAttribute("toDoList", toDoListVO.getToDoList());
+		
+		return "todolist/todolist";
+	}
+	
+	// 수정 관련한 컨트롤러.
+	@GetMapping("/todolist/modify/{id}")
+	public String getModifyIsFinished(@PathVariable int id) {
+		// jsp 경로를 return함.
+		return "redirect:/todolist/list"; 
+	}
+	
+	@PostMapping("/todolist/modify/{id}")
+	public String postModifyIsFinished(@PathVariable int id) {
+		
+		boolean isModified = toDoListService.updateIsFinished(id);
+		
+		if(isModified) {
+			System.out.println("성공적으로 수정되었습니다.");
+			return "redirect:/todolist/list";
+		} else {
+			return "redirect:/todolist/list";
+		}
+	}
+	
+	@GetMapping("/todolist/delete/{id}")
+	public String getDeleteToDoList(@PathVariable int id) {
+		return "redirect:/todolist/list";
+	}
+	
+	@PostMapping("/todolist/delete/{id}")
+	public String postDeleteToDoList(@PathVariable int id) {
+		boolean isDeleted = toDoListService.deleteToDoList(id);
+		
+		if(isDeleted) {
+			System.out.println("성공적으로 삭제되었습니다.");
+			return "redirect:/todolist/list";
+		} else {
+			System.out.println("삭제에 실패했습니다.");
+			return "redirect:/todolist/list";
+		}
+	}
+	
 }
