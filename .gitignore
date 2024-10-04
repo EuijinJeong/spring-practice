@@ -1,1 +1,23 @@
-/.metadata/
+# macOS에서 생성되는 시스템 파일 무시
+.DS_Store
+
+# maven 관련 파일 무시
+.mvn/
+mvnw
+mvnw.cmd
+
+# IDE 설정 파일 무시 (IntelliJ, Eclipse 등)
+*.iml
+.idea/
+.project
+.classpath
+.settings/
+
+# 로그 파일 무시
+*.log
+
+# 빌드 디렉토리 무시
+target/
+
+# 기타 시스템 파일 무시
+Thumbs.db
