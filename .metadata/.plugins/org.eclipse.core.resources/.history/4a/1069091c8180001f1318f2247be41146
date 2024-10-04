@@ -1,0 +1,30 @@
+package com.ktdsuniversity.edu.hello_spring.member.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ktdsuniversity.edu.hello_spring.bbs.dao.BoardDao;
+import com.ktdsuniversity.edu.hello_spring.member.service.MemberService;
+import com.ktdsuniversity.edu.hello_spring.member.vo.MemberVO;
+import com.ktdsuniversity.edu.hello_spring.member.vo.WriteNewMemberVO;
+
+@Service
+public class MemberServiceImpl implements MemberService{
+
+	@Autowired
+	private BoardDao boardDao;
+	
+	@Override
+	public int insertNewMember(WriteNewMemberVO writeNewMemberVO) {
+		
+		// VO 객체를 할당한다.
+		MemberVO newMember = new MemberVO();
+		newMember.setEmail(writeNewMemberVO.getEmail());
+		newMember.setName(writeNewMemberVO.getName());
+		newMember.setPassword(writeNewMemberVO.getPassword());
+		
+		boardDao.insertNewBoard(newMember);
+		
+		return 0;
+	}
+}

@@ -1,0 +1,35 @@
+package com.ktdsuniversity.edu.hello_spring.web;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.ktdsuniversity.edu.hello_spring.service.ToDoListService;
+
+@Controller
+public class ToDoListController {
+	
+	@Autowired 
+	private ToDoListService toDoListService;
+	
+	/**
+	 * 
+	 * @return
+	 */
+	@GetMapping("/todolist/writelist")
+	public String renderToDoListForm() {
+		return "/todolist/writelist";
+	}
+	
+	@PostMapping("/todolist/writelist")
+	public void writeToDoList() {
+		// 1. 클라이언트에서 넘어온 요청을 받는다.
+		
+		// 2. 서비스에게 요청을 전송한다.
+		
+		// 3. 요청 결과값을 받는다.
+		
+		// 4. 결과를 클라이언트에게 돌려준다.
+	}
+}

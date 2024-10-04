@@ -1,0 +1,25 @@
+package com.ktdsuniversity.edu.hello_spring.dao.impl;
+
+import org.mybatis.spring.SqlSessionTemplate;
+import org.mybatis.spring.support.SqlSessionDaoSupport;
+
+import com.ktdsuniversity.edu.hello_spring.dao.ToDoListDao;
+import com.ktdsuniversity.edu.hello_spring.vo.ToDoListWriteVO;
+
+/**
+ * 
+ */
+public class ToDoListDaoImpl extends SqlSessionDaoSupport implements ToDoListDao{
+
+	@Override
+	public void setSqlSessionTemplate(SqlSessionTemplate sqlSessionTemplate) {
+		super.setSqlSessionTemplate(sqlSessionTemplate);
+	}
+	
+	@Override
+		public int insertNewToDoList(ToDoListWriteVO toDoListWriteVO) {
+		
+		getSqlSession().insert("com.ktdsuniversity.edu.hello_spring.dao.ToDoListDao.insertToDoList", toDoListWriteVO)
+			return 0;
+		}
+}

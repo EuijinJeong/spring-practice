@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+* {
+  box-sizing: border-box;
+}
+
+.todo-list-area {
+  display: flex;
+  width: 80%;
+  justify-content: center;
+  text-align: center;
+}
+
+.todo-list-grid {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.btn-area {
+  display: flex;
+  margin-top: 2rem;
+}
+
+.btn-area > button {
+  background-color: #000;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}

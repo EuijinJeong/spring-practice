@@ -1,0 +1,127 @@
+package com.ktdsuniversity.edu.hello_spring.bbs.service.impl;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
+import java.util.UUID;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.ktdsuniversity.edu.hello_spring.bbs.dao.BoardDao;
+import com.ktdsuniversity.edu.hello_spring.bbs.service.BoardService;
+import com.ktdsuniversity.edu.hello_spring.bbs.vo.BoardListVO;
+import com.ktdsuniversity.edu.hello_spring.bbs.vo.BoardVO;
+import com.ktdsuniversity.edu.hello_spring.bbs.vo.ModifyBoardVO;
+import com.ktdsuniversity.edu.hello_spring.bbs.vo.WriteBoardVO;
+
+@Service
+public class BoardServiceImpl implements BoardService{
+
+	// application.yml파일에서 app.multipart.base-dir 설정 값을 가지고 온다.
+	@Value("${app.multipart.base-dir}")
+	private String baseDirectory;
+	
+	@Autowired
+	private BoardDao boardDao;
+	
+	
+	@Override
+	public BoardListVO getAllBoard() {
+		// 게시글 목록 화면에 데이터를 전송해주기 위해서 
+		// 게시글의 건수와 게시글의 목록을 조회해 반환시킨다.
+		
+		// 1. 게시글의 건수를 조회한다.
+		int boardCount = this.boardDao.selectBoardAllCount();
+		
+		// 2. 게시글의 목록을 조회한다.
+		List<BoardVO> boardList = this.boardDao.selectAllBoard();
+		
+		// 3. BoardListVO를 만들어서 게시글의 건수와 목록을 할당한다.
+		BoardListVO boardListVO = new BoardListVO();
+		boardListVO.setBoardCnt(boardCount);
+		boardListVO.setBoardList(boardList);
+		
+		// 4. BoardListVO인스턴스를 반환한다.
+		return boardListVO;
+	};
+	
+	public boolean createNewBoard(WriteBoardVO writeBoardVO) {
+		// 파일 업로드 처리를 먼저 한다.
+		MultipartFile file = writeBoardVO.getFile();
+		
+		// 1. client가 파일을 전송 했는지 체크한다.
+		
+		// 보안상의 이유로 파일이름을 난독화 시킨다.
+		String obfuscatedFileName = UUID.randomUUID().toString();
+		// 2. 클라이언트가 파일을 전송했다면
+		if(file != null && !file.isEmpty()) {
+			// 3. 파일을 서버 컴퓨터의 특정 폴더로 저장시킨다.
+
+			File uploadFile = new File("/Users/jeong-uijin/Desktop/uploadfiles", obfuscatedFileName);
+			if(!uploadFile.getParentFile().exists()) {
+				uploadFile.getParentFile().mkdirs();
+			}
+			
+			try {
+				file.transferTo(uploadFile);
+			} catch (IllegalStateException | IOException e) {
+				e.printStackTrace();
+				throw new RuntimeException("예기치 못한 이유로 업로드에 실패했습니다. 잠시 후 다시 시도해주세요.");
+			}
+		}
+		
+		// 4. 파일의 정보를 데이터베이스에 저장시킨다.
+		writeBoardVO.setFileName(obfuscatedFileName);
+		writeBoardVO.setOriginFileName(file.getOriginalFilename());
+		
+		
+		int createCount = boardDao.insertNewBoard(writeBoardVO);
+		
+		// 생성된 개수가 0보다 클 때 return (true) 아니면 false return
+		return createCount > 0;
+	}
+	
+	@Override
+	public BoardVO getOneBoard(int id, boolean isIncrease) {
+		BoardVO boardVO = new BoardVO();
+	
+		if(isIncrease) {
+			// 파라미터로 받은 아이디에 해당하는 게시글의 조회수가 1 증가한다.
+			int updateCount = boardDao.increaseViewCount(id);
+			
+			if(updateCount == 0) {
+				// updateCount가 0이라는 건
+				// 파라미터로 전달받은 id 값이 존재하지 않다라는 의미이다.
+				// 이러한 경우, 사용자에게 잘못된 접근입니다 라는 예외를 보내줘야 한다.
+				throw new IllegalArgumentException("잘못된 접근입니다.");
+			} else {
+				// 예외가 발생하지 않았다면, 게시글의 정보를 조회한다.
+				
+				boardVO = boardDao.getOneBoard(id);
+				
+				if(boardVO == null) {
+					throw new IllegalArgumentException("잘못된 접근입니다.");
+				}
+			}
+		}
+		return boardVO;
+	}
+	
+	@Override
+	public boolean updateOneBoard(ModifyBoardVO modifyBoardVO) {
+		int updateCount = boardDao.updateOneBoard(modifyBoardVO);
+		
+		return updateCount > 0;
+	}
+	
+	@Override
+	public boolean deleteOneBoard(int id) {
+		
+		int deleteCount = boardDao.deleteOneBoard(id);
+		
+		return deleteCount > 0;
+	}
+}

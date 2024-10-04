@@ -1,0 +1,10 @@
+package com.ktdsuniversity.edu.hello_spring.dao;
+
+import com.ktdsuniversity.edu.hello_spring.vo.ToDoListWriteVO;
+
+public interface ToDoListDao {
+	
+	// 할 일 등록하기.
+	public boolean insertNewToDoList(ToDoListWriteVO toDoListWriteVO);
+
+}

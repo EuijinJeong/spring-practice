@@ -1,0 +1,8 @@
+package com.ktdsuniversity.edu.hello_spring.member.service;
+
+import com.ktdsuniversity.edu.hello_spring.member.vo.WriteNewMemberVO;
+
+public interface MemberService {
+	
+	public int insertNewMember(WriteNewMemberVO writeNewMemberVO);
+}

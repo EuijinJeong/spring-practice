@@ -1,0 +1,8 @@
+package com.ktdsuniversity.edu.hello_spring.vo;
+
+import java.util.List;
+
+public class ToDoListVO {
+	
+	private List<ToDoVO> toDoList;
+}

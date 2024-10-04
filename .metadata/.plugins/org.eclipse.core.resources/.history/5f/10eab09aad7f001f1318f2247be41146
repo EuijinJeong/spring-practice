@@ -1,0 +1,16 @@
+package com.ktdsuniversity.edu.hello_spring.dao.impl;
+
+import com.ktdsuniversity.edu.hello_spring.dao.ToDoListDao;
+import com.ktdsuniversity.edu.hello_spring.vo.ToDoListWriteVO;
+
+/**
+ * 
+ */
+public class ToDoListDaoImpl implements ToDoListDao{
+
+	@Override
+	public int insertToDoList(ToDoListWriteVO toDoListWriteVO) {
+		
+		return 0;
+	}
+}

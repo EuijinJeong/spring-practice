@@ -1,0 +1,19 @@
+package com.ktdsuniversity.edu.hello_spring.web;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+@Controller
+public class ToDoListController {
+	
+	@GetMapping("/todolist/writelist")
+	public String renderToDoListForm() {
+		return "/todolist/writelist";
+	}
+	
+	@PostMapping("/todolist/writelist")
+	public void writeToDoList() {
+		
+	}
+}

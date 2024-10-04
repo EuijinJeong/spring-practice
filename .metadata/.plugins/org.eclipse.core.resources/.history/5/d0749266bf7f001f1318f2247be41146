@@ -1,0 +1,20 @@
+package com.ktdsuniversity.edu.hello_spring.common.beans;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+/**
+ * @Component: Spring Bean을 생성하셈!
+ */
+@Component
+public class FileHandler {
+	
+	@Value("${app.martipart.base-dir}")
+	private String baseDirectory;
+	
+	@Value("${app.martipart.obfuscation.enable}")
+	private boolean enableObfuscation;
+	
+	@Value("${app.martipart.hide-ext.enable}")
+	private boolean enableHideExtention;
+}

@@ -1,9 +1,0 @@
-package com.ktdsuniversity.edu.hello_spring.bbs.service.impl;
-
-import org.springframework.boot.test.context.SpringBootTest;
-
-// Spring Application의 Bean을 생성해주는 Annotation
-@SpringBootTest
-public class BoardServiceImplTest {
-	
-}

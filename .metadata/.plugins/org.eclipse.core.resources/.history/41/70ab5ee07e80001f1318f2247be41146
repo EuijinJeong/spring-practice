@@ -1,0 +1,7 @@
+package com.ktdsuniversity.edu.hello_spring.member.dao;
+
+import com.ktdsuniversity.edu.hello_spring.member.vo.WriteNewMemberVO;
+
+public interface MemberDao {
+	public int inserstNewMember(WriteNewMemberVO writeNewMemberVO);
+}
