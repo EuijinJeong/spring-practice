@@ -1,8 +1,8 @@
-package com.ktdsuniversity.edu.hello_spring.service;
+package com.ktdsuniversity.edu.hello_spring.todolist.service;
 
-import com.ktdsuniversity.edu.hello_spring.vo.ToDoListVO;
-import com.ktdsuniversity.edu.hello_spring.vo.ToDoListWriteVO;
-import com.ktdsuniversity.edu.hello_spring.vo.ToDoVO;
+import com.ktdsuniversity.edu.hello_spring.todolist.vo.ToDoListVO;
+import com.ktdsuniversity.edu.hello_spring.todolist.vo.ToDoListWriteVO;
+import com.ktdsuniversity.edu.hello_spring.todolist.vo.ToDoVO;
 
 public interface ToDoListService {
 

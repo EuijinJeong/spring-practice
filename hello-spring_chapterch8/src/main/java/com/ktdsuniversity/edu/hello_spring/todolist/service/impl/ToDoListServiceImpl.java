@@ -1,13 +1,13 @@
-package com.ktdsuniversity.edu.hello_spring.service.impl;
+package com.ktdsuniversity.edu.hello_spring.todolist.service.impl;
 
+import com.ktdsuniversity.edu.hello_spring.todolist.dao.ToDoListDao;
+import com.ktdsuniversity.edu.hello_spring.todolist.service.ToDoListService;
+import com.ktdsuniversity.edu.hello_spring.todolist.vo.ToDoListVO;
+import com.ktdsuniversity.edu.hello_spring.todolist.vo.ToDoListWriteVO;
+import com.ktdsuniversity.edu.hello_spring.todolist.vo.ToDoVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ktdsuniversity.edu.hello_spring.dao.ToDoListDao;
-import com.ktdsuniversity.edu.hello_spring.service.ToDoListService;
-import com.ktdsuniversity.edu.hello_spring.vo.ToDoListVO;
-import com.ktdsuniversity.edu.hello_spring.vo.ToDoListWriteVO;
-import com.ktdsuniversity.edu.hello_spring.vo.ToDoVO;
 
 @Service
 public class ToDoListServiceImpl implements ToDoListService {

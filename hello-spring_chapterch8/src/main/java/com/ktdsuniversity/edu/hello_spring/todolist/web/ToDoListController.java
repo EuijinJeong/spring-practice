@@ -1,5 +1,8 @@
-package com.ktdsuniversity.edu.hello_spring.web;
+package com.ktdsuniversity.edu.hello_spring.todolist.web;
 
+import com.ktdsuniversity.edu.hello_spring.todolist.service.ToDoListService;
+import com.ktdsuniversity.edu.hello_spring.todolist.vo.ToDoListVO;
+import com.ktdsuniversity.edu.hello_spring.todolist.vo.ToDoListWriteVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,9 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.ktdsuniversity.edu.hello_spring.service.ToDoListService;
-import com.ktdsuniversity.edu.hello_spring.vo.ToDoListVO;
-import com.ktdsuniversity.edu.hello_spring.vo.ToDoListWriteVO;
 
 
 

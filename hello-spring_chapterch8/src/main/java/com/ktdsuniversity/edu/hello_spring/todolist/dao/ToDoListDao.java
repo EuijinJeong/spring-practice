@@ -1,10 +1,10 @@
-package com.ktdsuniversity.edu.hello_spring.dao;
+package com.ktdsuniversity.edu.hello_spring.todolist.dao;
 
+
+import com.ktdsuniversity.edu.hello_spring.todolist.vo.ToDoListWriteVO;
+import com.ktdsuniversity.edu.hello_spring.todolist.vo.ToDoVO;
 
 import java.util.List;
-
-import com.ktdsuniversity.edu.hello_spring.vo.ToDoListWriteVO;
-import com.ktdsuniversity.edu.hello_spring.vo.ToDoVO;
 
 public interface ToDoListDao {
 	

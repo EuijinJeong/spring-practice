@@ -1,18 +1,18 @@
-package com.ktdsuniversity.edu.hello_spring.dao.impl;
+package com.ktdsuniversity.edu.hello_spring.todolist.dao.impl;
 
 import java.util.List;
+
+import com.ktdsuniversity.edu.hello_spring.todolist.dao.ToDoListDao;
+import com.ktdsuniversity.edu.hello_spring.todolist.vo.ToDoListWriteVO;
+import com.ktdsuniversity.edu.hello_spring.todolist.vo.ToDoVO;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.ktdsuniversity.edu.hello_spring.dao.ToDoListDao;
-import com.ktdsuniversity.edu.hello_spring.vo.ToDoListWriteVO;
-import com.ktdsuniversity.edu.hello_spring.vo.ToDoVO;
-
 @Repository
-public class ToDoListDaoImpl extends SqlSessionDaoSupport implements ToDoListDao{
+public class ToDoListDaoImpl extends SqlSessionDaoSupport implements ToDoListDao {
 
 	@Autowired
 	@Override

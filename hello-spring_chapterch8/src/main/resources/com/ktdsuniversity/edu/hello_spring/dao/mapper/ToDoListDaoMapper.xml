@@ -4,7 +4,7 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ktdsuniversity.edu.hello_spring.dao.ToDoListDao">
 
-	<insert id="insertNewToDoList" parameterType="com.ktdsuniversity.edu.hello_spring.vo.ToDoListWriteVO">
+	<insert id="insertNewToDoList" parameterType="com.ktdsuniversity.edu.hello_spring.todolist.vo.ToDoListWriteVO">
 		INSERT INTO TODOLIST
 		(ID
 		, SBJCT
@@ -15,7 +15,7 @@
 		, #{deadLine})
 	</insert>
 	
-	<select id="selectOneToDoList" resultType="com.ktdsuniversity.edu.hello_spring.vo.ToDoVO">
+	<select id="selectOneToDoList" resultType="com.ktdsuniversity.edu.hello_spring.todolist.vo.ToDoVO">
 		 SELECT ID
  	  		  , ISFIN AS isFinished
  	  		  , SBJCT AS subject
@@ -24,7 +24,7 @@
   		  WHERE ID = #{id}
 	</select>
 	
-	<select id="selectAllToDoList" resultType="com.ktdsuniversity.edu.hello_spring.vo.ToDoVO">
+	<select id="selectAllToDoList" resultType="com.ktdsuniversity.edu.hello_spring.todolist.vo.ToDoVO">
 		SELECT ID
 	 		 , ISFIN AS isFinished
 	 		 , SBJCT AS subject

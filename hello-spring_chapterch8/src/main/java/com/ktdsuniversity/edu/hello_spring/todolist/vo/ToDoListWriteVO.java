@@ -1,4 +1,4 @@
-package com.ktdsuniversity.edu.hello_spring.vo;
+package com.ktdsuniversity.edu.hello_spring.todolist.vo;
 
 /**
  * 사용자가 입력한 정보를 담은 VO 클래스이다.

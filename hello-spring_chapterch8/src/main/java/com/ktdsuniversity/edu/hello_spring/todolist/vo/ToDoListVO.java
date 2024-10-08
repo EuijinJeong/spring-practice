@@ -1,4 +1,4 @@
-package com.ktdsuniversity.edu.hello_spring.vo;
+package com.ktdsuniversity.edu.hello_spring.todolist.vo;
 
 import java.util.List;
 
