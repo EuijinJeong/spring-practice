@@ -3,6 +3,7 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="false"/>
 	<list key="searchhistory">
+		<item value="mapper"/>
 		<item value="modify"/>
 	</list>
 	<section name="org.eclipse.jst.jsp.ui.internal.preferences.ui.JSPTemplatePreferencePage$JSPEditTemplateDialog_dialogBounds">
@@ -20,6 +21,7 @@
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="ToDoListVO contains"/>
 			<item value="/WEB-INF/vies/board/boardlist.jsp"/>
 			<item value="Autowiring"/>
 		</list>

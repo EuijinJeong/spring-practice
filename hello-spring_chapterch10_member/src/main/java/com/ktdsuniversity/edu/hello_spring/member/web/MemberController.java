@@ -41,7 +41,7 @@ public class MemberController {
 		if(writeNewMemberVO.getEmail() != writeNewMemberVO.getConfirmPassword()) {
 			bindingResult.rejectValue("confirmPassword", "error.writeNewMemberVO", "비밀번호가 일치하지 않습니다.");
 			model.addAttribute("WriteNewMemberVO", writeNewMemberVO);
-			return "memmer/membersignup";
+			return "member/membersignup";
 		}
 		
 		System.out.println("이메일" + writeNewMemberVO.getEmail());

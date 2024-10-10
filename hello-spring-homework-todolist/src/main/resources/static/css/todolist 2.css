@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+
+.todo-list-area {
+  display: flex;
+  width: 80%;
+  justify-content: center;
+  text-align: center;
+}
+
+.todo-list-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 3fr, 2fr, 1fr, 1fr;
+  border-radius: 5px;
+  border-inline: 1px solid #ccc;
+}

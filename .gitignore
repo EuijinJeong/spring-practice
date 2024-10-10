@@ -48,3 +48,4 @@ target/
 # 기타 시스템 파일 무시
 Thumbs.db
 >>>>>>> spring-practice/ch06
+/.metadata/

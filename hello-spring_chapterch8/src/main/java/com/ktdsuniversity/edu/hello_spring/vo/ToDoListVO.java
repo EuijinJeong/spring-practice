@@ -3,7 +3,7 @@ package com.ktdsuniversity.edu.hello_spring.vo;
 import java.util.List;
 
 /**
- * 
+ * 게시글의 수를 가져오기 위해 선언한 VO 클래스.
  */
 public class ToDoListVO {
 	/**

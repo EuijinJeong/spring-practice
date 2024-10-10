@@ -27,8 +27,8 @@ public class MemberDaoImpl extends SqlSessionDaoSupport implements MemberDao{
 	public int getEmailCount(String email) {
 		int count = 0;
 		
-		getSqlSession().
-		return 0;
+		count = getSqlSession().selectOne(email);
+		return count;
 	}
 	
 	@Override

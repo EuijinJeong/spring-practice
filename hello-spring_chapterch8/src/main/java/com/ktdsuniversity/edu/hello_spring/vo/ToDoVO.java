@@ -1,5 +1,8 @@
 package com.ktdsuniversity.edu.hello_spring.vo;
 
+/**
+ * ToDoVO 객체이다.
+ */
 public class ToDoVO {
 	/**
 	 * 할 일 아이디 값.
